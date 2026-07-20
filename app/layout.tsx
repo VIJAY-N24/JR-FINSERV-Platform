@@ -1,10 +1,6 @@
 import type { Metadata } from "next";
 import { Playfair_Display, Poppins } from "next/font/google";
 import "@/styles/globals.css";
-import { TopBar } from "@/components/layout/TopBar";
-import { Navbar } from "@/components/layout/Navbar";
-import { Footer } from "@/components/layout/Footer";
-import { FloatingActions } from "@/components/common/FloatingActions";
 
 import { company } from "@/config/company";
 
@@ -32,13 +28,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
 	return (
 		<html lang="en" className={`${playfair.variable} ${poppins.variable}`}>
 			<body className="bg-neutral-50 text-foreground">
-				<TopBar />
-				<Navbar />
-				<div className="flex flex-col min-h-screen">
-					<main className="flex-grow">{children}</main>
-					<Footer />
-				</div>
-				<FloatingActions />
+				{children}
 			</body>
 		</html>
 	);
